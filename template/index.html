@@ -103,7 +103,7 @@
                 </div>
                 <h5>Cantidad</h5>
                 <div class="quantity">
-                    <button>-</button> <div>1</div> <button>+</button>
+                    <button v-on:click="pedido.cantidad-=1">-</button> <div>{{pedido.cantidad}}</div> <button v-on:click="pedido.cantidad+=1">+</button>
                 </div>
                 <div class="buy-box">
                     <button type="button" class="btn btn-primary">Comprar</button>
@@ -246,7 +246,13 @@
                    precio:"1800",
                    colores: ["teal", "blue", "slategrey", "navy"]
                  }
-               ]
+               ],
+               pedido:
+               {
+                id:null,
+                cantidad: 1,
+                color:null
+               }
               }
             }
         }).mount('#cabecera')
