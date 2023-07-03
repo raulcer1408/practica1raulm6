@@ -80,10 +80,11 @@
         </div>
       </nav> 
     
-      <div class="container">
+       <div class="container">
 
-        <div class="row">
-            <h3>S6S Mini GPS Drones</h3>
+        <div class="row" > 
+                <h3 v-if="producto.nombre!==''">{{producto.nombre}}</h3>     
+                       
         </div>
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4 ">
@@ -178,8 +179,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    
+</div>
     <footer :style="'background-color:'+footerColor">    
     </footer>
 </div>
@@ -189,6 +189,14 @@
         createApp({
             data() {
                return {
+                producto:{
+                    id:1,
+                    imagen:"https://cdn.shopify.com/s/files/1/0640/5067/files/pexels-photo-53903_large.jpg?v=1492718386",
+                    nombre: "Dron LU3 MAX GPS 8K HD",
+                    descripcion:"Dron LU3 MAX GPS 8K HD profesional con <b>cámara Dual</b> cardán autoestabilizador, Motor sin escobillas para evitar obstáculos, cuadricóptero plegable",
+                    precio:"620",
+                    colores: ["red", "blue", "black", "yellow"],
+                },
                marca: "MegaDron",
                menuColor: "lightblue",
                footerColor: "slategrey",
@@ -201,11 +209,12 @@
                       {
                         etiqueta: "Tienda",
                         url: "?"
-                      }
-                     ]
+                      },
+                     ],
               }
             }
         }).mount('#cabecera')
+
     </script>
 </body>
 
