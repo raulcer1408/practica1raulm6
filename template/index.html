@@ -98,9 +98,8 @@
                 </div>
                 <h5>Color</h5>
                 <div>
-                    <div class="color-box clic" style="background: red"></div>
-                    <div class="color-box clic" style="background: blue"></div>
-                    <div class="color-box clic" style="background: black"></div>
+                    <div v-for="(item, index) in producto.colores" :key="index" class="color-box clic" :style=`background:${item}`>
+                    </div>
                 </div>
                 <h5>Cantidad</h5>
                 <div class="quantity">
