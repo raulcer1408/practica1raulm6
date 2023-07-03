@@ -126,8 +126,10 @@
                         <template v-for="(productoval, index) in productosRelacionados" :key="index">
                            <h5 class="card-title" v-if="productoval.nombre==='KF102'">{{productoval.nombre}}</h5>                                    
                         </template>
-                        <img src="https://cdn.shopify.com/s/files/1/0640/5067/files/pexels-photo-53903_large.jpg?v=1492718386"
-                    alt="" width="100">
+                        <template v-for="(productoval, index) in productosRelacionados" :key="index">                        
+                          <img v-if="productoval.imagen==='https://cdn.shopify.com/s/files/1/0640/5067/files/pexels-photo-53903_large.jpg?v=1492718386'" :src=`${productoval.imagen}` alt="" width="100">
+                        </template>
+                        
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
                             <div class="producto-relacionado-precio">Precio:1000 BOB</div>
@@ -145,11 +147,11 @@
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <template v-for="(productoval, index) in productosRelacionados" :key="index">
-                        <h5 class="card-title" v-if="productoval.nombre==='KBDFA-Dron E888 RC'">{{productoval.nombre}}</h5>        
+                        <h5 class="card-title" v-if="productoval.nombre==='KBDFA-Dron E888 RC'">{{productoval.nombre}}</h5>
+                         </template>
+                         <template v-for="(productoval, index) in productosRelacionados" :key="index">
+                        <img v-if="productoval.imagen==='https://m.media-amazon.com/images/I/61T16KqZtPL.jpg'" v-bind:src=`${productoval.imagen}` alt="" width="100">
                         </template>
-                        
-                        <img src="https://m.media-amazon.com/images/I/61T16KqZtPL.jpg"
-                    alt="" width="100%">
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
                             <div class="producto-relacionado-precio">Precio:1000 BOB</div>
@@ -167,11 +169,13 @@
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
                         <template v-for="(productoval, index) in productosRelacionados" :key="index">
-                        <h5 class="card-title" v-if="productoval.nombre==='Dron Profesional 4K con GPS'">{{productoval.nombre}}</h5>        
+                         <div>
+                            <h5 class="card-title" v-if="productoval.nombre==='Dron Profesional 4K con GPS'">{{productoval.nombre}}</h5> 
+                            <img v-if="productoval.imagen==='https://i.blogs.es/9e6591/dron/450_1000.jpg'" :src=`${productoval.imagen}` alt="" width="100">    
+                        </div>       
                         </template>
                         
-                        <img src="https://i.blogs.es/9e6591/dron/450_1000.jpg"
-                    alt="" width="100%">
+                        
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of
                             the card's content.</p>
                             <div class="producto-relacionado-precio">Precio:1000 BOB</div>
