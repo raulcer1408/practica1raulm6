@@ -88,13 +88,13 @@
         </div>
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4 ">
-                <img src="https://cdn.shopify.com/s/files/1/0640/5067/files/pexels-photo-53903_large.jpg?v=1492718386"
-                    alt="" width="100%">
+                <img v-bind:src="producto.imagen" alt="" width="300">
             </div>
             <div class="col-12 col-sm-6  col-md-8">
-                <h6>S6S Mini GPS Drones 150g Drone 4K Profesional HD Dual Camera 5G WIFI FPV Brushless Folding Quadcopter RC Dron Helicopter Toys</h6>
+                    <h6 v-html="producto.descripcion"></h6>        
+                
                 <div class="p-3 mb-2 text-white" :style="precioEstilos">
-                    Precio: 350 BOB
+                    Precio: {{producto.precio}} BOB
                 </div>
                 <h5>Color</h5>
                 <div>
@@ -191,7 +191,7 @@
                return {
                 producto:{
                     id:1,
-                    imagen:"https://cdn.shopify.com/s/files/1/0640/5067/files/pexels-photo-53903_large.jpg?v=1492718386",
+                    imagen:"imagen1.jpg",
                     nombre: "Dron LU3 MAX GPS 8K HD",
                     descripcion:"Dron LU3 MAX GPS 8K HD profesional con <b>cámara Dual</b> cardán autoestabilizador, Motor sin escobillas para evitar obstáculos, cuadricóptero plegable",
                     precio:"620",
