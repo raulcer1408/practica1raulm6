@@ -98,7 +98,7 @@
                 </div>
                 <h5>Color</h5>
                 <div>
-                    <div v-for="(item, index) in producto.colores" :key="index" class="color-box clic" :style=`background:${item}`>
+                    <div v-for="(item, index) in producto.colores" :key="index" class="color-box clic" :style=`background:${item}` v-on:click="cambiovalor(producto.id,item)">
                     </div>
                 </div>
                 <h5>Cantidad</h5>
@@ -106,7 +106,7 @@
                     <button v-on:click="pedido.cantidad-=1">-</button> <div>{{pedido.cantidad}}</div> <button v-on:click="pedido.cantidad+=1">+</button>
                 </div>
                 <div class="buy-box">
-                    <button type="button" class="btn btn-primary">Comprar</button>
+                    <button v-on:click="mensajealert()" type="button" class="btn btn-primary" v-show="pedido.cantidad>=1">Comprar</button>
                 </div>
                 
             </div>
@@ -254,8 +254,26 @@
                 color:null
                }
               }
-            }
-        }).mount('#cabecera')
+            },
+            methods: {
+              mensajealert(){
+                if(this.pedido.color==null)
+                {
+                    alert('El color debe ser seleccionado haciendo click sobre el');
+                }
+                else{
+                    alert("id del producto: "+this.pedido.id +" cantidad: "+this.pedido.cantidad+" color: "+this.pedido.color);
+                }
+              },
+              cambiovalor(valid,valcolor)
+              {
+                console.log(valid);
+                console.log(valcolor);
+                this.pedido.id=valid;
+                this.pedido.color=valcolor;
+              }  
+            },            }
+        ).mount('#cabecera')
 
     </script>
 </body>
